@@ -69,15 +69,11 @@ API'yi kullanmak isteyen kullanıcıların repolarını API veritabanına kaydet
 curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz"
 ```
 
-![Resim](https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz)
-
 ✅**Repo adı bilgisinin yazdırıldığı istek**
 
 ```sh
 curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_repo_name=1"
 ```
-
-![Resim](https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_repo_name=1)
 
 ✅**Tarih bilgisinin yazdırıldığı istek**
 
@@ -85,15 +81,11 @@ curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fk
 curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1"
 ```
 
-![Resim](https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1)
-
 ✅**Tarih ve Repo adı bilgisinin yazdırıldığı istek**
 
 ```sh
 curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1"
 ```
-
-![Resim](https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1)
 
 ✅**Tarih, Repo adı ve API sağlayıcı bilgisinin yazdırıldığı istek**
 
@@ -101,15 +93,11 @@ curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fk
 curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1"
 ```
 
-![Resim](https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1)
-
 ✅**Tarih, Repo adı, API sağlayıcı bilgisinin yazdırıldığı ve renklerin değiştirildiği istek**
 
 ```sh
 curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=255,255,255"
 ```
-
-![Resim](https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=255,255,255)
 
 ❌**Yanlış İstek**
 
@@ -119,8 +107,6 @@ curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fk
 curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=11111111111"
 ```
 
-![Resim](https://toktasoft.com/api/github/repo-visitor-counter.php?repo=11111111111)
-
 ❌**Yanlış İstek**
 
 Geçersiz bir RGB renk kodu yazılırsa resim oluşturulmaz.
@@ -128,8 +114,6 @@ Geçersiz bir RGB renk kodu yazılırsa resim oluşturulmaz.
 ```sh
 curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=300,300,300"
 ```
-
-![Hatalı istek](https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=300,300,300)
 
 
 ![-----------------------------------------------------](./Readme%20Resources/Çizgi.png)
