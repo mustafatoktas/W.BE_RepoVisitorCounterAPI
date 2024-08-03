@@ -15,7 +15,7 @@
 
 ![-----------------------------------------------------](./Readme%20Resources/Çizgi.png)
 
-![Resim](https://toktasoft.com/api/github/repo-visitor-counter.php?repo=j9rm7kp2vdcxsau&show_repo_name=1&show_date=1)
+![Resim](https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=j9rm7kp2vdcxsau&show_repo_name=1&show_date=1&show_brand=1)
 
 
 ![-----------------------------------------------------](./Readme%20Resources/Çizgi.png)
@@ -66,45 +66,45 @@ API'yi kullanmak isteyen kullanıcıların repolarını API veritabanına kaydet
 ✅**Sadece zorunlu olan parametre isteği**
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz"
 ```
 
 ✅**Repo adı bilgisinin yazdırıldığı istek**
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_repo_name=1"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_repo_name=1"
 ```
 
 ✅**Tarih bilgisinin yazdırıldığı istek**
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1"
 ```
 
 ✅**Tarih ve Repo adı bilgisinin yazdırıldığı istek**
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1"
 ```
 
 ✅**Tarih, Repo adı ve API sağlayıcı bilgisinin yazdırıldığı istek**
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1"
 ```
 
 ✅**Tarih, Repo adı, API sağlayıcı bilgisinin yazdırıldığı ve renklerin değiştirildiği istek**
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=255,255,255"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=255,255,255"
 ```
 
 ❌**Yanlış İstek**
 
-`repo` parametresine API veritabanında bulunmayan bir ID değeri yazılırsa repo bulunamaz.
+`repo` parametresine API veritabanında bulunmayan bir ID değeri yazılırsa resim oluşturulmaz.
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=11111111111"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=11111111111"
 ```
 
 ❌**Yanlış İstek**
@@ -112,7 +112,7 @@ curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=1111
 Geçersiz bir RGB renk kodu yazılırsa resim oluşturulmaz.
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=300,300,300"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=300,300,300"
 ```
 
 
