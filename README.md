@@ -37,7 +37,7 @@ dakikada bir kaydedilir.
 
 ## Dokümantasyon
 
-Base URL: `https://toktasoft.com/api/github/repo-visitor-counter.php`
+Base URL: `https://toktasoft.com/api/github2/repo-visitor-counter.php`
 
 API 6 farklı parametre almaktadır.
 
