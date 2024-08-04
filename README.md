@@ -48,13 +48,13 @@ API 6 farklı parametre almaktadır.
 | <p align="center">`txt_color`</p>      | <p align="center">hayır</p> | `RGB renk kodları`                       | <p align="center">197,239,222</p> | Resimdeki yazılar için RGB renk kodunun yazıldığı parametre                    |
 | <p align="center">`show_date`</p>      | <p align="center">hayır</p> | `1`<br>`0`                               | <p align="center">0</p>           | `1` veya `0`'dan başka bir değer girilirse 0 değeri yazılmış gibi işlem görür. |
 | <p align="center">`show_repo_name`</p> | <p align="center">hayır</p> | `1`<br>`0`                               | <p align="center">0</p>           | `1` veya `0`'dan başka bir değer girilirse 0 değeri yazılmış gibi işlem görür. |
-| <p align="center">`show_brand`</p>     | <p align="center">hayır</p> | `1`<br>`0`                               | <p align="center">1</p>           | `1` veya `0`'dan başka bir değer girilirse 1 değeri yazılmış gibi işlem görür.<br>Ayrıcalıklı olmayan kullanıcılar parametreye 0 değerini yazsalar bile marka adı resim üzerinde gösterilemeye devam edilir. |
+| <p align="center">`show_brand`</p>     | <p align="center">hayır</p> | `1`<br>`0`                               | <p align="center">1</p>           | `1` veya `0`'dan başka bir değer girilirse 1 değeri yazılmış gibi işlem görür.<br>Ayrıcalıklı olmayan kullanıcılar parametreye 0 değerini yazsalar bile API sağlayıcı adı resim üzerinde gösterilmeye devam edilir. |
 
-API'yi kullanmak isteyen kullanıcıların repolarını API veritabanına kaydettirmek ve repo ID alabilmek için iletişime geçmesi gerekmektedir.
+API'yi kullanmak isteyen kullanıcıların repolarını API veritabanına kaydettirmek için iletişime geçmesi gerekmektedir.
 
 - **Repo ve Kullanıcı Yönetimi:** Kullanıcılar API veritabanına kayıtlı repolarıyla eşleştirilir. Ayrıcalıklı kullanıcılar `show_brand` parametresini kontrol edebilir.
 - **IP Adresi Takibi:** API, aynı IP adresinden aynı repo için yapılan istekleri 10 dakikada bir kaydeder, böylece yanıltıcı ziyaret sayıları önlenir.
-- **Ziyaret Sayısı Takibi:** Her başarılı istek sonrası ilgili repo için aylık ve toplam ziyaret sayıları güncellenir.
+- **Ziyaret Sayısı Takibi:** Her başarılı istek sonrası ilgili repo için aylık ve toplam ziyaretçi sayıları güncellenir.
 
 
 ![-----------------------------------------------------](./Readme%20Resources/Çizgi.png)
@@ -69,11 +69,15 @@ API'yi kullanmak isteyen kullanıcıların repolarını API veritabanına kaydet
 curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz"
 ```
 
+![Repo Visitor Counter](https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz)
+
 ✅**Repo adı bilgisinin yazdırıldığı istek**
 
 ```sh
 curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_repo_name=1"
 ```
+
+![Repo Visitor Counter](https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_repo_name=1)
 
 ✅**Tarih bilgisinin yazdırıldığı istek**
 
@@ -81,11 +85,14 @@ curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2f
 curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1"
 ```
 
+![Repo Visitor Counter](https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1)
+
 ✅**Tarih ve Repo adı bilgisinin yazdırıldığı istek**
 
 ```sh
 curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1"
 ```
+![Repo Visitor Counter](https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1)
 
 ✅**Tarih, Repo adı ve API sağlayıcı bilgisinin yazdırıldığı istek**
 
@@ -93,11 +100,15 @@ curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2f
 curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1"
 ```
 
+![Repo Visitor Counter](https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1)
+
 ✅**Tarih, Repo adı, API sağlayıcı bilgisinin yazdırıldığı ve renklerin değiştirildiği istek**
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=255,255,255"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=0,255,0"
 ```
+
+![Repo Visitor Counter](https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=0,255,0)
 
 ❌**Yanlış İstek**
 
@@ -107,13 +118,17 @@ curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2f
 curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=11111111111"
 ```
 
+![Repo Visitor Counter](https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=11111111111)
+
 ❌**Yanlış İstek**
 
 Geçersiz bir RGB renk kodu yazılırsa resim oluşturulmaz.
 
 ```sh
-curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1&bg_color=0,0,0&txt_color=300,300,300"
+curl -X GET "https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&bg_color=0,0,0&txt_color=300,300,300"
 ```
+
+![Repo Visitor Counter](https://toktasoft.com/api/github2/repo-visitor-counter.php?repo=h2fktgj3v8e69nz&bg_color=0,0,0&txt_color=300,300,300)
 
 
 ![-----------------------------------------------------](./Readme%20Resources/Çizgi.png)
