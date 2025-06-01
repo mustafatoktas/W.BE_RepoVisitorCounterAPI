@@ -19,12 +19,11 @@ Repo Visitor Counter API<a name="readme-top"></a>
 
 ## API Hakkında
 
-Bu repo, PHP diliyle geliştirilmiş olan GitHub repo ziyaretlerini takip eden sayaç API'nin
-dokümantasyonunu içerir.
+Bu repo, GitHub repo ziyaretlerini takip eden sayaç API'nin dokümantasyonunu içerir.
 
 HTTP GET istekleriyle `repo`, `bg_color`, `txt_color`, `show_date`, `show_repo_name`, `show_brand`
 parametrelerini alır ve belirli bir repoya yapılan ziyaretlerin sayısını izler ve bu bilgileri
-dinamik olarak oluşturulmuş bir PNG görüntü olarak sunar.
+dinamik olarak oluşturulmuş bir PNG resim olarak sunar.
 
 Yanıltıcı sonuçları önleyebilmek adına aynı repo için aynı IP adresinden gelen istekler yalnızca 10
 dakikada bir kaydedilir. 
@@ -41,7 +40,7 @@ API 6 farklı parametre almaktadır.
 | Parametre                              | Zorunlu Mu?                 | Değerler                                 | Varsayılan Değer                  | Açıklama                                                                       |
 | -------------------------------------- | --------------------------- | ---------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------ |
 | <p align="center">`repo`</p>           | <p align="center">evet</p>  | `Repo'nun API veritabanındaki ID değeri` |                                   |                                                                                |
-| <p align="center">`bg_color`</p>       | <p align="center">hayır</p> | `RGB renk kodları`                       | <p align="center">34,39,36</p>    | Resmin arkaplan rengi için RGB renk kodunun yazıldığı parametre                |
+| <p align="center">`bg_color`</p>       | <p align="center">hayır</p> | `RGB renk kodları`                       | <p align="center">34,39,46</p>    | Resmin arkaplan rengi için RGB renk kodunun yazıldığı parametre                |
 | <p align="center">`txt_color`</p>      | <p align="center">hayır</p> | `RGB renk kodları`                       | <p align="center">197,239,222</p> | Yazı rengi için RGB renk kodunun yazıldığı parametre                           |
 | <p align="center">`show_date`</p>      | <p align="center">hayır</p> | `1`<br>`0`                               | <p align="center">0</p>           | `1` veya `0`'dan başka bir değer girilirse 0 değeri yazılmış gibi işlem görür. |
 | <p align="center">`show_repo_name`</p> | <p align="center">hayır</p> | `1`<br>`0`                               | <p align="center">0</p>           | `1` veya `0`'dan başka bir değer girilirse 0 değeri yazılmış gibi işlem görür. |
@@ -50,7 +49,6 @@ API 6 farklı parametre almaktadır.
 API'yi kullanmak isteyen kullanıcıların repolarını API veritabanına kaydettirmek için iletişime geçmesi gerekmektedir.
 
 - **Repo ve Kullanıcı Yönetimi:** Kullanıcılar API veritabanına kayıtlı repolarıyla eşleştirilir. Yalnızca ayrıcalıklı kullanıcılar `show_brand` parametresini kontrol edebilir.
-- **IP Adresi Takibi:** API, aynı IP adresinden aynı repo için yapılan istekleri 10 dakikada bir kaydeder, böylece yanıltıcı ziyaret sayıları önlenir.
 - **Ziyaret Sayısı Takibi:** Her başarılı istek sonrası ilgili repo için aylık ve toplam ziyaretçi sayıları güncellenir.
 
 
@@ -84,20 +82,20 @@ curl -X GET "https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz
 
 ![Repo Visitor Counter](https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz&show_date=1)
 
-✅**Tarih ve Repo adı bilgisinin yazdırıldığı istek**
+✅**Tarih ve repo adı bilgisinin yazdırıldığı istek**
 
 ```sh
 curl -X GET "https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1"
 ```
 ![Repo Visitor Counter](https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1)
 
-✅**Tarih, Repo adı ve API sağlayıcı bilgisinin yazdırıldığı istek**
+✅**Tarih ve repo adının yazdırıldığı, API sağlayıcı bilgisinin yazdırılmadığı istek**
 
 ```sh
-curl -X GET "https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1"
+curl -X GET "https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=0"
 ```
 
-![Repo Visitor Counter](https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=1)
+![Repo Visitor Counter](https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz&show_date=1&show_repo_name=1&show_brand=0)
 
 ✅**Tarih, Repo adı, API sağlayıcı bilgisinin yazdırıldığı ve renklerin değiştirildiği istek**
 
@@ -112,14 +110,14 @@ curl -X GET "https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz
 `repo` parametresine API veritabanında bulunmayan bir ID değeri yazılırsa hata mesajı yazan resim döndürülür.
 
 ```sh
-curl -X GET "https://toktasoft.com/api/repo-visitor-counter?repo=11111111111"
+curl -X GET "https://toktasoft.com/api/repo-visitor-counter?repo=bulunmayaniddegeri"
 ```
 
-![Repo Visitor Counter](https://toktasoft.com/api/repo-visitor-counter?repo=11111111111)
+![Repo Visitor Counter](https://toktasoft.com/api/repo-visitor-counter?repo=bulunmayaniddegeri)
 
 ❌**Yanlış İstek**
 
-`bg_color` ve `txt_color` parametrelerinde 0–255 dışına taşan sayılar kırpılır. Virgül sayısı eksikse renk siyah kabul edilir. Alfanümerik girişler 0 kabul edilir.
+`bg_color` ve `txt_color` parametrelerine RGB formatında olmayan değerler yazılırsa hata mesajı yazan resim döndürülür.
 
 ```sh
 curl -X GET "https://toktasoft.com/api/repo-visitor-counter?repo=h2fktgj3v8e69nz&bg_color=-11,0,0&txt_color=300,300,300"
